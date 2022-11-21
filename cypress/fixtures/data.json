@@ -1,0 +1,17 @@
+{
+  "information": {
+    "firstName": "Angela",
+    "lastName": "Valbuena",
+    "zipCode" : 661002
+  },
+  "titles": {
+    "product": "Products",
+    "cart": "Your Cart",
+    "checkout": "Checkout: Your Information",
+    "overview": "Checkout: Overview",
+    "confirmation": "Checkout: Complete!"
+  },
+  "messages": {
+    "confirmation": "THANK YOU FOR YOUR ORDER"
+  }
+}

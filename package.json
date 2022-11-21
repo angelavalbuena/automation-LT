@@ -1,0 +1,19 @@
+{
+  "name": "cypresssaucedemo",
+  "version": "1.0.0",
+  "description": "Cypress project to automate sauce demo web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "author": "Angela Valbuena",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1"
+  }
+}

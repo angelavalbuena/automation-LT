@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-21T15:08:46.637Z",
+    "end": "2022-11-21T15:08:58.978Z",
+    "duration": 12341,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ca432478-97c0-4242-b759-3ea3c8d284f6",
+      "title": "",
+      "fullFile": "cypress/tests/SauceDemo.spec.js",
+      "file": "cypress/tests/SauceDemo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3e43b8e3-4bb6-4b54-844b-4597655f2262",
+          "title": "Sauce Demo Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify item name in the cart page",
+              "fullTitle": "Sauce Demo Tests Verify item name in the cart page",
+              "timedOut": null,
+              "duration": 6404,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const items = [];\nconst itemsforLocator = [];\nproductPage.getProductNames().each($el => items.push($el.text())).then(() => {\n  items.forEach($el => itemsforLocator.push($el.replaceAll(' ', '-').toLowerCase()));\n  const itemSelected = items[0];\n  const locatorFirstItem = itemsforLocator[0];\n  productPage.addProductToCart(locatorFirstItem);\n  productPage.navigateToCart();\n  cartPage.getProductCartName().invoke('text').as(\"cartProductName\").then(() => {\n    cy.wrap(itemSelected).should('eq', this.cartProductName);\n  });\n});",
+              "err": {},
+              "uuid": "f7ed9329-fefb-4646-96fa-b01acce6f802",
+              "parentUUID": "3e43b8e3-4bb6-4b54-844b-4597655f2262",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify item name in the checkout overview page",
+              "fullTitle": "Sauce Demo Tests Verify item name in the checkout overview page",
+              "timedOut": null,
+              "duration": 2835,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const items = [];\nconst itemsforLocator = [];\nproductPage.getProductNames().each($el => items.push($el.text())).then(() => {\n  items.forEach($el => itemsforLocator.push($el.replaceAll(' ', '-').toLowerCase()));\n  const itemSelected = items[0];\n  const locatorFirstItem = itemsforLocator[0];\n  productPage.addProductToCart(locatorFirstItem);\n  productPage.navigateToCart();\n  cartPage.clickCheckoutButton();\n  checkoutInfoPage.fillFirstName(this.data.information.firstName);\n  checkoutInfoPage.fillLastName(this.data.information.lastName);\n  checkoutInfoPage.fillZipCode(this.data.information.zipCode);\n  checkoutInfoPage.clickContinueButton();\n  overviewPage.getProductCheckoutName().invoke('text').as(\"productCheckoutName\").then(() => {\n    cy.wrap(itemSelected).should('eq', this.productCheckoutName);\n  });\n});",
+              "err": {},
+              "uuid": "8b9eb816-7eb2-4945-bbd7-90f74b62d1f6",
+              "parentUUID": "3e43b8e3-4bb6-4b54-844b-4597655f2262",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify that an order is finished successfully",
+              "fullTitle": "Sauce Demo Tests Verify that an order is finished successfully",
+              "timedOut": null,
+              "duration": 3031,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const items = [];\nconst itemsforLocator = [];\nproductPage.getProductNames().each($el => items.push($el.text())).then(() => {\n  items.forEach($el => itemsforLocator.push($el.replaceAll(' ', '-').toLowerCase()));\n  const itemSelected = items[0];\n  const locatorFirstItem = itemsforLocator[0];\n  productPage.addProductToCart(locatorFirstItem);\n  productPage.navigateToCart();\n  cartPage.clickCheckoutButton();\n  checkoutInfoPage.fillFirstName(this.data.information.firstName);\n  checkoutInfoPage.fillLastName(this.data.information.lastName);\n  checkoutInfoPage.fillZipCode(this.data.information.zipCode);\n  checkoutInfoPage.clickContinueButton();\n  overviewPage.clickFinishButton();\n  confirmationPage.getConfirmationPageTitle().invoke('text').as(\"checkoutCompleteTitle\").then(() => {\n    cy.wrap(this.data.titles.confirmation).should('eq', this.checkoutCompleteTitle);\n  });\n  confirmationPage.getConfirmationMessage().invoke('text').as(\"checkoutConfirmationMessage\").then(() => {\n    cy.wrap(this.data.messages.confirmation).should('eq', this.checkoutConfirmationMessage);\n  });\n});",
+              "err": {},
+              "uuid": "7f3f1671-34a7-4475-8e80-34de979e0ea6",
+              "parentUUID": "3e43b8e3-4bb6-4b54-844b-4597655f2262",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f7ed9329-fefb-4646-96fa-b01acce6f802",
+            "8b9eb816-7eb2-4945-bbd7-90f74b62d1f6",
+            "7f3f1671-34a7-4475-8e80-34de979e0ea6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12270,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
